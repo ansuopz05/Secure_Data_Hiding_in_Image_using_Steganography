@@ -17,7 +17,7 @@ def encodeimage(imagepath, secretmessage, outputpath):
         for pixel in row:
             for channel in range(3):  
                 if dataindex < len(binarymessage):
-                    pixel[channel] = (pixel[channel] & 254) | int(binarymessage[dataindex])  # Fixed line
+                    pixel[channel] = (pixel[channel] & 254) | int(binarymessage[dataindex]) 
                     dataindex += 1
                 else:
                     break
@@ -53,8 +53,8 @@ if __name__ == "__main__":
         outputimage = input("Enter output image path (e.g., output.png): ")
         encodeimage(inputimage, message, outputimage)
     elif choice == 'd':
-        input_image = input("Enter the image path to decode: ")
-        hidden_message = decodeimage(input_image)
-        print("Decoded Message:", hidden_message)
+        inputimage = input("Enter the image path to decode: ")
+        hiddenmessage = decodeimage(inputimage)
+        print("Decoded Message:", hiddenmessage)
     else:
         print("Invalid choice!")
